@@ -1,0 +1,39 @@
+.Card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: wheat;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* 3 cards per row (minus margin) */
+    float: left; /* Float cards to left for grid layout */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  @media (max-width: 768px) {
+    .Card {
+      width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Card {
+      width: calc(100% - 20px); /* 1 card per row on mobile */
+    }
+  }
+  
+  .view-button   {
+    margin-top: 10px;
+    margin-right: 10px; /* Add right margin to separate buttons */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .view-button:hover,
+  .delete-button:hover {
+    background-color: #0056b3;
+  }
+  

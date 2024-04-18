@@ -1,0 +1,44 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.text {
+  color: gray;
+  font-size: 24px;
+}
+
+.search-container {
+  flex: 1; /* Grow to fill available space */
+  margin: 0 20px; /* Add space around the search input */
+}
+
+.search-input {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-top: 1.6vmax;
+  width: 50%; /* Use full width of the search container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  /* Apply auto margins to center the input within the container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
