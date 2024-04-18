@@ -18,11 +18,58 @@ const PopupForm = ({ onSubmit, onClose }) => {
     onClose();
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      setMediaFile(file);
+      try {
+        const resizedFile = await resizeImage(file);
+        setMediaFile(resizedFile);
+      } catch (error) {
+        console.error('Error resizing image:', error);
+      }
     }
+  };
+
+  const resizeImage = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target.result;
+        img.onload = () => {
+          const MAX_WIDTH = 400;
+          const MAX_HEIGHT = 300;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          canvas.toBlob((blob) => {
+            resolve(new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() }));
+          }, 'image/jpeg', 0.7); // Adjust JPEG quality as needed (0.7 is 70% quality)
+        };
+      };
+      reader.onerror = (error) => {
+        reject(error);
+      };
+    });
   };
 
   return (
@@ -34,8 +81,7 @@ const PopupForm = ({ onSubmit, onClose }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        
-        {/* Use ReactQuill with custom toolbar */}
+
         <ReactQuill
           theme="snow"
           placeholder="Description"
@@ -43,15 +89,13 @@ const PopupForm = ({ onSubmit, onClose }) => {
           onChange={setDescription}
           modules={{
             toolbar: {
-              container: "#toolbar", // Specify toolbar container
+              container: "#toolbar",
             },
           }}
         />
-        
-        {/* Render custom toolbar outside ReactQuill */}
+
         <CustomToolbar />
-        
-        {/* File Input for Media Upload */}
+
         <div className="media-upload">
           <input
             type="file"
@@ -59,8 +103,7 @@ const PopupForm = ({ onSubmit, onClose }) => {
             onChange={handleFileChange}
           />
         </div>
-        
-        {/* Display Preview of Uploaded Media */}
+
         {mediaFile && (
           <div className="media-preview">
             {mediaFile.type.startsWith('image/') ? (
@@ -75,7 +118,7 @@ const PopupForm = ({ onSubmit, onClose }) => {
             )}
           </div>
         )}
-        
+
         <button onClick={handleSubmit}>Add Card</button>
         <button onClick={onClose}>Cancel</button>
       </div>
