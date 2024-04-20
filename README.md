@@ -2,11 +2,11 @@ a.Notes Taking Website - Project Documentation
 
 
     Table of Contents
-     2.Project Overview
-     3.Features
-     4.Tech Stack
-     5.Usage
-     6.Folder Structure
+     1.Project Overview
+     2.Features
+     3.Tech Stack
+     4.Note Details Page
+     5.Save the note by clicking on the save button
 b.Additional Notes
 
 
@@ -17,14 +17,14 @@ b.Additional Notes
 
 c. Features 
 
-    a.Display a list of saved notes on the homepage
-    b.Clicking on a note opens its details for viewing/editing
-    c.Create new notes with title, description, and optional media attachment (image or video link)
-    d.Rich text editor for formatting note descriptions
-    e.Search notes by title
-    f.Sort notes based on creation time 
-    g.User authentication with login/signup functionality
-    h.Mobile responsiveness for improved usability on smaller screens
+    1.Display a list of saved notes on the homepage
+    2.Clicking on a note opens its details for viewing/editing
+    3.Create new notes with title, description, and optional media attachment (image or video link)
+    4.Rich text editor for formatting note descriptions
+    5.Search notes by title
+    6.Sort notes based on creation time 
+    7.User authentication with login/signup functionality
+    8.Mobile responsiveness for improved usability on smaller screens
 
 
 d. Tech Stack "ReactJs"
