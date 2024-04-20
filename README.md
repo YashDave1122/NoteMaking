@@ -6,7 +6,7 @@ a.Notes Taking Website - Project Documentation
      2.Features
      3.Tech Stack
      4.Note Details Page
-     5.Save the note by clicking on the save button
+     5.Additional Notes
 b.Project Overview
 
 
