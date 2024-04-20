@@ -7,10 +7,10 @@ a.Notes Taking Website - Project Documentation
      3.Tech Stack
      4.Note Details Page
      5.Save the note by clicking on the save button
-b.Additional Notes
+b.Project Overview
 
 
-    1. Project Overview
+     
  
       The Notes Taking Website is a ReactJS-based application designed to allow users to create, view, edit, and manage notes. It provides a user-friendly interface with features like rich text editing, media   
       attachments, search functionality, and sorting options.
@@ -50,12 +50,13 @@ f.Note Details Page:
      d.Click on the floating button to create a new note
      e.Enter title, description, and optional media link
      f.Format the description using the rich text editor
-
+     g.Save the note by clicking on the save button
     
-g.Save the note by clicking on the save button
+
+g.Additional Notes 
 
 
-     Additional Notes 
+     
      a.The project follows best coding practices with meaningful variable and function names.
      b.Mobile responsiveness is implemented using CSS media queries for improved usability on mobile devices.
      c.Authentication functionality can be integrated using Firebase Authentication or similar services for user management.
