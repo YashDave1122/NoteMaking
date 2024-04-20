@@ -1,11 +1,12 @@
 a.Notes Taking Website - Project Documentation
 
-    1.Table of Contents
-    2.Project Overview
-    3.Features
-    4.Tech Stack
-    5.Usage
-    6.Folder Structure
+
+    Table of Contents
+     2.Project Overview
+     3.Features
+     4.Tech Stack
+     5.Usage
+     6.Folder Structure
 b.Additional Notes
 
 
